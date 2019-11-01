@@ -1,0 +1,215 @@
+h1{
+    margin-top: 50px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container > div {
+    width: 500px;
+}
+/*Базовые селекторы*/
+
+/*Селектор по типу*/
+.on-type span {
+    color: blue;
+    background-color: yellow;
+}
+
+/*Селектор по классу*/
+.on-class {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+.important-span {
+    color: white;
+    background-color: red;
+}
+
+.important-p {
+    width: auto;
+    color: red;
+    background-color: blue;
+}
+
+.important-b {
+    color: blue;
+    background-color: white;
+}
+
+/*Селектор по ID*/
+#important-div {
+    background-color: yellow;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#block-1{
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+    margin: 15px;
+}
+
+/*Универсальные селекторы*/
+.on-universal > * {
+    color: blue;
+}
+*.universal-1 {
+    background-color: yellow;
+}
+
+*#universal-2{
+    background-color: red;
+}
+
+/*Селекторы атрибутов*/
+.on-attribute [lang] {
+    background-color: red;
+}
+
+.on-attribute [lang^=en] {
+    color: white;
+}
+
+.on-attribute [href$=com] {
+    color: green;
+    text-decoration: none;
+}
+
+.on-attribute [lang*=u] {
+    text-decoration: line-through;
+}
+
+.on-attribute [lang|=en] {
+    font-size: 24px;
+}
+
+.on-attribute [lang~=en-gb] {
+    color: blue;
+}
+
+.on-attribute [href='https://git-scm.com'] {
+    border-bottom: 1px solid red;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*Комбинаторы*/
+
+/*Комбинатор запятая*/
+.content-block {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+
+.block-1,
+.block-2 {
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+/*Комбинатор потомков*/
+.on-descendant-combinator .parent {
+    background-color: yellow;
+}
+
+.on-descendant-combinator .parent span {
+    background-color: red;
+    color: blue;
+}
+
+/*Дочерние селекторы*/
+.on-child-combinator .parent {
+    background-color: yellow;
+}
+
+.on-child-combinator .parent >span {
+    background-color: red;
+    color: blue;
+}
+
+/*Комбинатор всех соседних элементов*/
+.on-general-sibling-combinator .first ~ div {
+    color: blue;
+}
+
+.on-general-sibling-combinator .first ~ .second {
+    background-color: aqua;
+}
+
+/*Комбинатор следующего соседнего элемента*/
+.on-sibling .first + div {
+    color: blue;
+}
+
+.on-sibling div + div.second {
+    background-color: aqua;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*Псевдоэлементы*/
+
+/*Псевдоэлемент ::after*/
+.div-with-after::after {
+    content: "контент из after";
+    color: red;
+    font-size: 24px;
+}
+
+/*Псевдоэлемент ::before*/
+.div-with-before::before {
+    content: "контент из before";
+    color: red;
+    font-size: 24px;
+}
+
+/*Псевдоэлемент ::first-letter*/
+.div-with-first-letter::first-letter {
+    font-size: 50px;
+    color: red;
+}
+
+/*Псевдоэлемент ::first-line*/
+.div-with-first-line{
+    width: 155px;
+    background-color: aqua;
+}
+
+.div-with-first-line::first-line{
+    color: yellow;
+}
+
+/*Псевдоэлемент ::selection*/
+.div-with-selection::selection {
+    background-color: aqua;
+}
+
+/*Псевдоэлемент ::backdrop*/
+dialog::backdrop {
+    background-color: #ff5ec1;
+}
+
+/*Псевдоэлемент ::placeholder*/
+.input-with-placeholder{
+    width: 500px;
+    font-size: 24px;
+}
+.input-with-placeholder::placeholder{
+    background-color: #94f0ff;
+    color: #1f1b27;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/

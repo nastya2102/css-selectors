@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="content">
+    <h1>Базовые селекторы</h1>
+    <div class="container">
+        <h2>Селектор по типу</h2>
+        <div class="on-type">
+        <span>
+            тег Span с очень важным текстом
+        </span>
+            <p>
+                тег p с очень важным текстом
+            </p>
+        </div>
+        <h2>Селектор по классу</h2>
+        <div class="on-class">
+        <span class="important-span">
+            тег Span с очень важным текстом
+        </span>
+            <strong class="important-p">
+                тег strong с очень важным текстом
+            </strong>
+            <b class="important-b">
+                тег b с очень важным текстом
+            </b>
+        </div>
+        <h2>Селектор по ID</h2>
+        <div class="on-id">
+            <div id="important-div">
+                <div id="block-1"></div>
+            </div>
+        </div>
+        <h2>Универсальные селекторы</h2>
+        <div class="on-universal">
+            <div class="universal-1">
+                пример универсального селектора div с class
+            </div>
+            <span id="universal-2">пример универсального селектора span с id</span>
+            <div>
+                пример универсального селектора div без class и id
+            </div>
+        </div>
+        <h2>Селекторы атрибутов</h2>
+        <div class="on-attribute">
+            <div lang="en">див с атрибутом lang="en"</div>
+            <div lang="ja">див с атрибутом lang="ja"</div>
+            <div lang="en-us en-gb en-au">див с атрибутом lang="en-us"</div>
+            <div lang="ru">див с атрибутом lang="ru"</div>
+            <a href="https://www.google.com">a с атрибутом href https://www.google.com</a>
+            <a href="https://git-scm.com"> a с атрибутом href https://git-scm.com</a>
+        </div>
+    </div>
+    <h1>Комбинаторы</h1>
+    <div class="container">
+        <h2>Комбинатор запятая</h2>
+        <div class="content-block">
+            <div class="block-1"></div>
+            <div class="block-2"></div>
+        </div>
+        <h2>Комбинатор потомков</h2>
+        <div class="on-descendant-combinator">
+            <div class="parent">
+                <span>первый див</span>
+                <div>
+                    <span>еще один вложенный див</span>
+                </div>
+            </div>
+        </div>
+        <h2>Дочерние селекторы</h2>
+        <div class="on-child-combinator">
+            <div class="parent">
+                <span>первый див</span>
+                <div>
+                    <span>еще один вложенный див</span>
+                </div>
+            </div>
+        </div>
+        <h2>Комбинатор всех соседних элементов</h2>
+        <div class="on-general-sibling-combinator">
+            <div class="first">Див первый</div>
+            <div>Див второй без класса</div>
+            <div class="second">Див третий с классом second</div>
+        </div>
+        <h2>Комбинатор следующего соседнего элемента</h2>
+        <div class="on-sibling">
+            <div class="first">Див первый</div>
+            <div>Див второй без класса</div>
+            <div class="second">Див третий с классом second</div>
+        </div>
+    </div>
+    <h1>Псевдоэлементы</h1>
+    <div class="container">
+        <h2>Псевдоэлемент ::after</h2>
+        <div class="div-with-after">
+            определенный контент
+        </div>
+        <h2>Псевдоэлемент ::before</h2>
+        <div class="div-with-before">
+            определенный контент
+        </div>
+        <h2>Псевдоэлемент ::first-letter</h2>
+        <div class="div-with-first-letter">
+            определенный контент
+        </div>
+        <h2>Псевдоэлемент ::first-line</h2>
+        <div class="div-with-first-line">
+            определенный контент
+            еще какой-то контент
+        </div>
+        <h2>Псевдоэлемент ::selection</h2>
+        <div class="div-with-selection">
+            определенный контент
+        </div>
+        <h2>Псевдоэлемент ::backdrop</h2>
+        <div>
+            <button id="awesome-btn">открыть модальное окно</button>
+            <dialog class="with-backdrop">
+                <div>
+                    определенный контент
+                    <button id="awesome-close-btn">Закрыть модальное окно</button>
+                </div>
+            </dialog>
+            <script>
+              const dialog = document.querySelector('dialog');
+              document.querySelector("#awesome-btn").onclick = function () {
+                dialog.showModal()
+              };
+              document.querySelector("#awesome-close-btn").onclick = function () {
+                dialog.close()
+              }
+            </script>
+        </div>
+        <h2>Псевдоэлемент ::placeholder</h2>
+        <div>
+            <input class="input-with-placeholder" placeholder="Очень важный placeholder">
+        </div>
+    </div>
+</div>
+</body>
+</html>
